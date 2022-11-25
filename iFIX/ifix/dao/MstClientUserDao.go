@@ -46,8 +46,9 @@ var searchbranch = "SELECT DISTINCT a.branch as Branch from mstclientuser a wher
 //var searchloginbygroupids="select a.loginname as Loginname ,a.name as Name from mstclientuser a where a.clientid=? and a.mstorgnhirarchyid=?  and a.id in (select b.userid from mstgroupmember b where b.groupid ? and b.activeflg=1 and b.deleteflg=0) and a.activeflag=1 and a.deleteflag=0 and a.loginname like ?"
 //CheckDuplicateCientUser check duplicate record
 func (mdao DbConn) CheckDuplicateCientUser(tz *entities.MstClientUserEntity) (entities.MstClientUserEntities, error) {
-	logger.Log.Println("duplicateuser Query -->", duplicateuser)
-	logger.Log.Println("parameters -->", tz.ClientID, tz.MstorgnhirarchyID, tz.Loginname)
+	//logger.Log.Println("duplicateuser Query -->", duplicateuser)
+	//logger.Log.Println("parameters -->", tz.ClientID, tz.MstorgnhirarchyID, tz.Loginname)
+
 	value := entities.MstClientUserEntities{}
 	err := mdao.DB.QueryRow(duplicateuser, tz.ClientID, tz.MstorgnhirarchyID, tz.Loginname).Scan(&value.Total)
 	switch err {
