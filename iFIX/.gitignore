@@ -1,14 +1,14 @@
 #ignore docker file
-Dockerfile
+#Dockerfile
 #ignore build file
-iFIX
-go.mod
-go.sum
+#iFIX
+#go.mod
+#go.sum
 #ignore upload folder
 .idea/*
 .idea
 
 # Logs
-log
-*.log
+#log
+#*.log
 
